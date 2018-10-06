@@ -24,8 +24,11 @@ class TestUtils:
     def test_to_time_string(self):
         assert to_time('max') == 'max'
 
+    def test_to_time_minutes_and_seconds(self):
+        assert to_time(90) == '1’30”'
+
     def test_to_time_seconds(self):
-        assert to_time(90) == '90”'
+        assert to_time(30) == '30”'
 
     def test_to_time_minutes(self):
         assert to_time(120) == '2’'

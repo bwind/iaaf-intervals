@@ -25,6 +25,8 @@ def parse_time(s):
 def to_time(s):
     if not isinstance(s, int):
         return s
-    if s % 60 == 0:
-        return '%s’' % (s // 60)
+    if s > 60:
+        if s % 60 == 0:
+            return '%d’' % (s // 60)
+        return '%d’%d”' % divmod(s, 60)
     return '%d”' % s
