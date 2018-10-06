@@ -18,6 +18,8 @@ class Set:
 
     def dump(self):
         retval = ' '.join([rep.dump() for rep in self.repetitions])
+        if not all([rep.recovery is not None for rep in self.repetitions]):
+            retval = '{%s}' % retval
         if self.repeats > 1:
             retval = ('%d x ' % self.repeats) + retval
         if self.recovery:

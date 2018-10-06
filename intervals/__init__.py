@@ -7,7 +7,7 @@ from intervals.regex import (
 )
 from intervals.repetition import Repetition
 from intervals.set import Set
-from intervals.utils import parse_time
+from intervals.utils import parse_time, safe_int
 
 
 def load(s):
@@ -15,6 +15,7 @@ def load(s):
     if match is not None:
         repeats, sets, recovery_between_sets = match.groups()
         set = _load_set(sets)
+        set.repeats = safe_int(repeats)
         set.recovery = parse_time(recovery_between_sets)
     else:
         # Not a grouped set. Try to load as regular set.

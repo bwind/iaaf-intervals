@@ -118,7 +118,7 @@ class TestIntervals:
 
     def test_load_grouped_sets(self):
         assert load(self.grouped_sets) == Set(
-            repeats=1,
+            repeats=2,
             repetitions=[
                 Repetition(
                     repeats=1,
